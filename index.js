@@ -28,7 +28,6 @@ function seleccionarDia() {
     }
 }
 
-
 //SELECCIONAR HORARIO PARA EL TURNO
 function horarioTurno(){
 
@@ -40,16 +39,16 @@ function horarioTurno(){
         } else if(horario <= 21) {
             alert("El horario elegido para su turno es a las: " + numero + "hs")
         } else {
-            alert("En el horario elegido no trabajamos);
+            alert("En el horario elegido no trabajamos");
         }
     } while (parseInt(numero));
 }
 
 seleccionarDia(){
-    alert("El día que seleccionaste es: " + díaTurno)
+    alert("El día que seleccionaste es: " + díaTurno);
 }
 seleccionarHorario(){
-    alert("El horario elegido para tu turno es a las: " + horarioTurno)
+    alert("El horario elegido para tu turno es a las: " + horarioTurno);
 }
 
 
