@@ -1,6 +1,6 @@
 //SELECCIONAR DÍA DE TURNO
 function seleccionarDia() {
-    let diaTurno = promtp("Ingrese el día del turno: ");
+    let diaTurno = prompt("Ingrese el día del turno (SIN TILDES): ");
 
     switch(diaTurno) {
         case "lunes":
@@ -30,25 +30,24 @@ function seleccionarDia() {
 
 //SELECCIONAR HORARIO PARA EL TURNO
 function horarioTurno(){
-
     do{
-        numero = promtp("Ingrese el horario en el que desea su turno: ");
+        numero = prompt("Ingrese el horario en el que desea su turno (SIN PUNTOS, EJ 1230): ");
 
-        if (numero >= 10){
-            alert("El horario elegido para su turno es a las: " + numero + "hs")
-        } else if(horario <= 21) {
-            alert("El horario elegido para su turno es a las: " + numero + "hs")
+        if  ((numero >= 10) && (numero <= 21)){
+        alert("El horario elegido para su turno es a las: " + numero + "hs")
+
         } else {
-            alert("En el horario elegido no trabajamos");
-        }
-    } while (parseInt(numero));
+        alert("En el horario elegido no trabajamos");
+    } 
+    } while (parseInt(numero)); 
 }
 
+//EJECUTAR FUNCIONES MOSTRANDO EL RESULTADO DEL TURNO ELEGIDO
 seleccionarDia(){
-    alert("El día que seleccionaste es: " + díaTurno);
+    alert("El día que seleccionaste es: " + díaTurno)
 }
-seleccionarHorario(){
-    alert("El horario elegido para tu turno es a las: " + horarioTurno);
+horarioTurno(){
+    alert("El horario elegido para tu turno es a las: " + numero)
 }
 
 
