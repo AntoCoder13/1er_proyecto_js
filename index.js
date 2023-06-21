@@ -20,18 +20,19 @@ function seleccionarDia() {
         break;
 
         case "sabado":
-        alert("El día elegido no trabajamo.");
+        alert("El día elegido no trabajamos.");
         break;
         case "domingo":
-        alert("El día elegido no trabajamo.");
+        alert("El día elegido no trabajamos.");
         break;
     }
+    alert("El día que seleccionaste es: " + diaTurno)
 }
 
 //SELECCIONAR HORARIO PARA EL TURNO
 function horarioTurno(){
     do{
-        numero = prompt("Ingrese el horario en el que desea su turno (SIN PUNTOS, EJ 1230): ");
+        numero = prompt("Ingrese el horario en el que desea su turno (con coma (,) EJ 12,15): ");
 
         if  ((numero >= 10) && (numero <= 21)){
         alert("El horario elegido para su turno es a las: " + numero + "hs")
@@ -39,15 +40,14 @@ function horarioTurno(){
         } else {
         alert("En el horario elegido no trabajamos");
     } 
-    } while (parseInt(numero)); 
+    } while (parseFloat(numero));
+    
+    alert("El horario elegido para tu turno es a las: " + numero)
 }
 
 //EJECUTAR FUNCIONES MOSTRANDO EL RESULTADO DEL TURNO ELEGIDO
-seleccionarDia(){
-    alert("El día que seleccionaste es: " + díaTurno)
-}
-horarioTurno(){
-    alert("El horario elegido para tu turno es a las: " + numero)
-}
+seleccionarDia()
+horarioTurno()
+
 
 
