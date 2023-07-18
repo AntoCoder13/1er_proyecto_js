@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <div class="ppal m-4">
-        <h1>Turnero de Spa</h1>
-        <form id="appointment-form">
-            <label for="name">Nombre: </label>
+    <div class="m-4">
+        <h1 class="titulo-ppal">Turnero de Spa</h1>
+        <form id="appointment-form" class="form-inputs">
+            <label for="name" class="form-input">Nombre: </label>
             <input type="text" id="name" class="border border-danger p-2 mb-2 rounded-4 bg-light-subtle bg-gradient" required>
     
             <label for="service">Servicio: </label>
@@ -24,8 +24,10 @@
              
             <label for="date">Fecha: </label>
             <input type="date" id="date" class="border border-danger p-2 mb-2 rounded-4 bg-light-subtle bg-gradient" required>
+
             <label for="time">Hora: </label>
             <input type="time" id="time" class="border border-danger p-2 mb-2 rounded-4 bg-light-subtle bg-gradient" required>
+
             <button type="submit" class="border border-danger p-2 mb-2 border-2 rounded-4 bg-light-subtle bg-gradient bg-danger bg-gradient">Solicitar turno</button>
         </form>
         <div id="appointment-list"></div>
