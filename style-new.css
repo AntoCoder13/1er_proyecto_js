@@ -8,6 +8,10 @@
     background-color: rgb(252, 248, 244);
 }
 
+.h1{
+    margin: 0;
+}
+
 .form-inputs{
     display: flex;
     margin: 15px;
