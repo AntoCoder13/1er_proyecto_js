@@ -14,6 +14,7 @@ function generarColorAleatorio(){
     return colorHex;
 }
 
+
 boton.addEventListener('click', function(){
     let colorAleatorio = generarColorAleatorio(); 
     color.textContent = colorAleatorio;
@@ -71,7 +72,7 @@ window.addEventListener('load', function() {
     }
 });
 
-document.getElementById('boton_submit').addEventListener('click', ( => {
+document.getElementById('boton_submit').addEventListener('click', () => {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -79,7 +80,6 @@ document.getElementById('boton_submit').addEventListener('click', ( => {
         },
         buttonsStyling: false,
       })
-      
       swalWithBootstrapButtons.fire({
         title: 'Estás segur@ de tu turno?',
         text: "Si lo aceptás quedará asignado!",
