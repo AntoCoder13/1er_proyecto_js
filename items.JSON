@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "MASAJE",
+        "price": 3500,
+        "duration": 45
+    },
+    {
+        "id": 2,
+        "name": "FACIAL",
+        "price": 1800,
+        "duration": 30
+    },
+    {
+        "id": 3,
+        "name": "MANICURÍA",
+        "price": 3000,
+        "duration": 130
+    }
+]

@@ -14,7 +14,6 @@ function generarColorAleatorio() {
   return colorHex;
 }
 
-
 boton.addEventListener('click', function () {
   let colorAleatorio = generarColorAleatorio();
   color.textContent = colorAleatorio;
@@ -107,7 +106,7 @@ document.getElementById('boton_submit').addEventListener('click', () => {
   })
 })
 
-function obtenerTurnosDelServidor() {
+/*function obtenerTurnosDelServidor() {
   fetch('URL_DEL_SERVIDOR')
     .then(response => {
       if (!response.ok) {
@@ -122,5 +121,5 @@ function obtenerTurnosDelServidor() {
       console.error('Error:', error);
     });
 }
+obtenerTurnosDelServidor(); */
 
-obtenerTurnosDelServidor();
