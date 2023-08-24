@@ -4,14 +4,37 @@
     padding: 0;
     font-family: 'Patrick Hand', cursive;
 }
+
 body{
     height: 100vh;
     background-color: #2B807B;
 }
+
 body::selection{
-    background-color: black;
+    background-color: rgb(189, 39, 39);
     color: white;
 }
+
+.titulo-ppal{
+    color: white;
+    align-items: center;
+    padding: 10px;
+}
+
+.form-inputs{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+    border: 2px solid #022430;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #053e53; 
+}
+
 .centrar_flex{
     display: flex;
     position: absolute;
@@ -23,19 +46,24 @@ body::selection{
     justify-content: center;
     margin: 5px;
 }
+
 #contenedor{
+    display: flex;
     height: 70px;
-    width: 270px;
+    width: 400px;
     background-color: white;
     border: 3px solid black;
     border-radius: 10px;
     flex-wrap: wrap;
     flex-direction: column;
 }
+
 #color{
+    display: flex;
     font-size: 30px;
     font-weight: bold;
 }
+
 button{
     font-size: 15px;
     color: white;
@@ -44,25 +72,16 @@ button{
     margin: 15px;
     border: 3px solid #008CBA;
     padding: 5px 10px;
-    user-select: none;
     transition-duration: 0.4s;
     cursor: pointer;
 }
+
 button:hover{
-    background-color: #05455A;
+    background-color: #a2d6e7;
+    color: black;
 }
 
 /* ***************************************************************** */
-
-h1{
-    margin: 0;
-}
-
-.form-inputs{
-    display: flex;
-    margin: 15px;
-}
-
 .border{
     border-radius: 5px;
 }
