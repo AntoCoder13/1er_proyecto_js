@@ -1,3 +1,12 @@
+const appointmentArray = []
+
+function Appointment(nombre, servicio, fecha, hora) {
+  this.nombre = nombre;
+  this.servicio = servicio;
+  this.fecha = fecha;
+  this.hora = hora;
+}
+
 //APP DEL CLIMA
 let urlBase = 'https://api.openweathermap.org/data/2.5/weather'
 let api_key = 'a7ea9e19a59b579f90a33f1fbfefc87e'
@@ -5,10 +14,10 @@ let difKelvin = 273.15
 
 document.getElementById('botonBusqueda').addEventListener('click', () => {
   const ciudad = document.getElementById('ciudadEntrada').value
-  if(ciudad){
-      fetchDatosClima(ciudad)
-  }
+  ciudad ? fetchDatosClima(ciudad) : Swal.fire('Por favor ingrese ciudad');
 })
+
+
 
 function fetchDatosClima(ciudad){
   fetch(`${urlBase}?q=${ciudad}&appid=${api_key}`)
@@ -50,7 +59,7 @@ function mostrarDatosClima(data){
 }
 
 //BOTON PARA CAMBIAR EL FONDO DE COLOR
-const boton = document.querySelector('button');
+const boton = document.getElementById('boton_color');
 const color = document.getElementById('color');
 
 function generarColorAleatorio() {
@@ -90,22 +99,24 @@ form.addEventListener('submit', function (event) {
   const time = timeInput.value;
 
   // Guardar los datos en localStorage
-  const appointmentData = { name, service, date, time };
-  localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
+  const appointmentData = new Appointment(name, service, date, time);
+  appointmentArray.push(appointmentData);
+  localStorage.setItem('appointmentData', JSON.stringify(appointmentArray));
 
   // Crear un elemento de turno
-  const appointment = document.createElement('div');
-  appointment.classList.add('appointment');
-  appointment.innerHTML = `
-        <h3>${name}</h3>
-        <p>Servicio: ${service}</p>
-        <p>Fecha: ${date}</p>
-        <p>Hora: ${time}</p>
-    `;
+  appointmentArray.forEach( (e) => {
 
-  // Agregar el elemento de turno a la lista
-  appointmentList.appendChild(appointment);
-
+    const appointment = document.createElement('div');
+    appointment.classList.add('appointment');
+    appointment.innerHTML = `
+          <h3>${e.nombre}</h3>
+          <p>Servicio: ${e.servicio}</p>
+          <p>Fecha: ${e.fecha}</p>
+          <p>Hora: ${e.hora}</p>`;
+  
+    // Agregar el elemento de turno a la lista
+    appointmentList.appendChild(appointment);
+  })
   // Limpiar los campos del formulario
   form.reset();
 });
@@ -156,55 +167,3 @@ document.getElementById('boton_submit').addEventListener('click', () => {
     }
   })
 })
-
-/*function obtenerTurnosDelServidor() {
-  fetch('URL_DEL_SERVIDOR')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Error al obtener los turnos del servidor');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
-obtenerTurnosDelServidor(); */
-
-class Item {
-  constructor(id, name, price, duration) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.duration = duration;
-  }
-}
-
-//Fetch al JSON (items.json)
-const getData = async () => {
-  const API = './items.JSON'
-  const response = await fetch(API);
-  const data = await response.json();
-  console.log(data);
-  return data;
-}
-
-const clima = document.querySelector('#clima')
-
-fetch('')
-    .then( (resp) => resp.json() )
-    .then( (data) => {
-       
-        data.forEach((post) => {
-            const li = document.createElement('li')
-            li.innerHTML = `
-                <h4>${post.title}</h4>
-                <p>${post.body}</p>
-            `
-            clima.append(li)
-        })
-    })
-
