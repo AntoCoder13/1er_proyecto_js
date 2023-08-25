@@ -4,29 +4,24 @@
     padding: 0;
     font-family: 'Patrick Hand', cursive;
 }
-
 body{
     height: 100vh;
     background-color: #2B807B;
 }
-
 body::selection{
     background-color: rgb(189, 39, 39);
     color: white;
 }
-
 .titulo-ppal{
     color: white;
     align-items: center;
     padding: 10px;
 }
-
 .form-inputs{
     color: white;
     font-size: 25px;
     font-weight: 500;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     margin: 20px;
     border: 2px solid #022430;
@@ -34,57 +29,6 @@ body::selection{
     border-radius: 5px;
     background-color: #053e53; 
 }
-
-.centrar_flex{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-}
-
-#contenedor{
-    display: flex;
-    height: 70px;
-    width: 400px;
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-#color{
-    display: flex;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-button{
-    font-size: 15px;
-    color: white;
-    border-radius: 20px;
-    background-color: #008CBA;
-    margin: 15px;
-    border: 3px solid #008CBA;
-    padding: 5px 10px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-button:hover{
-    background-color: #a2d6e7;
-    color: black;
-}
-
-.border{
-    border-radius: 5px;
-}
-
 .appointment{
     display: flex;
     flex-direction: row;
@@ -98,4 +42,77 @@ button:hover{
     width: 150px;
     height: 150px;
     margin: 10px;
+}
+.centrar_flex{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+/* BOTÓN CAMBIAR DE COLORES */
+#contenedor{
+    display: flex;
+    height: 70px;
+    width: 400px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#color{
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+}
+button{
+    font-size: 15px;
+    color: white;
+    border-radius: 20px;
+    background-color: #008CBA;
+    margin: 15px;
+    border: 3px solid #008CBA;
+    padding: 5px 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #a2d6e7;
+    color: black;
+}
+.border{
+    border-radius: 5px;
+}
+
+/* CLIMA */
+.contenedorClima {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #a0d3ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+}
+#botonBusqueda {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+#datosClima {
+    margin-top: 20px;
+    font-size: 18px;
 }
